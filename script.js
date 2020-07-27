@@ -62,6 +62,7 @@ if (submitBtn) {
       document.querySelector('#success-message').style.display = 'block';
       document.getElementById('current-operand-display').value = '';
       document.getElementById('random-number-display').value = '';
+      document.getElementById('chances').innerText = 3;
     } else {
       document.querySelector('#success-message').style.display = 'none';
       document.querySelector('#failed-message').style.display = 'block';
