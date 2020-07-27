@@ -79,7 +79,7 @@ function decreaseChances() {
   const decreasedNumber = parseInt(chanceNumber) - 1;
   if (decreasedNumber <= 0) {
     alert(
-      'You have wasted all of you chances please try again with another number'
+      'You have wasted all of your chances please try again with another number'
     );
     location.reload();
   }
