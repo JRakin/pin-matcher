@@ -26,13 +26,6 @@ for (const button of numbersBtn) {
   });
 }
 
-//APPEND NUMBERS ONE BY ONE AND UPDATE DISPLAY
-function appendNumber(buttonNumber) {
-  let currentNumber = document.getElementById('current-operand-display').value;
-  document.getElementById('current-operand-display').value =
-    currentNumber.toString() + buttonNumber.toString();
-}
-
 //DELETE NUMBER OPERATION
 if (deleteNumberBtn) {
   deleteNumberBtn.addEventListener('click', function (event) {
@@ -57,19 +50,28 @@ if (submitBtn) {
     const userGivenNumber = document.getElementById('current-operand-display')
       .value;
 
-    if (randomNumber == userGivenNumber) {
-      document.querySelector('#failed-message').style.display = 'none';
-      document.querySelector('#success-message').style.display = 'block';
-      document.getElementById('current-operand-display').value = '';
-      document.getElementById('random-number-display').value = '';
-      document.getElementById('chances').innerText = 3;
-    } else {
-      document.querySelector('#success-message').style.display = 'none';
-      document.querySelector('#failed-message').style.display = 'block';
-      document.getElementById('current-operand-display').value = '';
-      decreaseChances();
+    if (randomNumber) {
+      if (randomNumber == userGivenNumber) {
+        document.querySelector('#failed-message').style.display = 'none';
+        document.querySelector('#success-message').style.display = 'block';
+        document.getElementById('current-operand-display').value = '';
+        document.getElementById('random-number-display').value = '';
+        document.getElementById('chances').innerText = 3;
+      } else {
+        document.querySelector('#success-message').style.display = 'none';
+        document.querySelector('#failed-message').style.display = 'block';
+        document.getElementById('current-operand-display').value = '';
+        decreaseChances();
+      }
     }
   });
+}
+
+//APPEND NUMBERS ONE BY ONE AND UPDATE DISPLAY
+function appendNumber(buttonNumber) {
+  let currentNumber = document.getElementById('current-operand-display').value;
+  document.getElementById('current-operand-display').value =
+    currentNumber.toString() + buttonNumber.toString();
 }
 
 //TRY BUTTON
