@@ -19,7 +19,7 @@ if (generatePinBtn) {
   });
 }
 
-//GIVING USER INPUT
+//GIVING USER INPUT BUTTON EVENT
 for (const button of numbersBtn) {
   button.addEventListener('click', (event) => {
     appendNumber(button.innerText);
@@ -80,10 +80,13 @@ function decreaseChances() {
 
   const decreasedNumber = parseInt(chanceNumber) - 1;
   if (decreasedNumber <= 0) {
+    document.getElementById('chances').innerText = decreasedNumber;
     alert(
       'You have wasted all of your chances please try again with another number'
     );
-    location.reload();
+    setTimeout(() => {
+      location.reload();
+    }, 1500);
   }
   document.getElementById('chances').innerText = decreasedNumber;
 }
